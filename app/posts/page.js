@@ -11,9 +11,17 @@ export default function Posts() {
     return (
       <div className="posts">
         <h1>Post List</h1>
-        <ul>
-          {/* Render a list of Links from the posts object   */}
-        </ul>
+        {posts.map(post => {
+          const {name, path} = post;
+
+          return(
+            <ul>
+              <li>
+                <Link href={path} >{name}</Link>
+              </li>
+            </ul>
+          )
+        })}
       </div>
     )
   }
